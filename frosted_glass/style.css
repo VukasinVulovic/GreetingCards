@@ -40,13 +40,12 @@ body {
 body::before {
     content: '';
     position: absolute;
-    left: 30%;
-    top: 40%;
-    transform: translate(-30%, -40%);
     border-radius: 50%;
     background: linear-gradient(green, yellow);
-    width: 30vh;
-    height: 30vh;
+    margin-bottom: -20vh;
+    margin-left: -30vw;
+    width: 20vw;
+    height: 20vw;
     filter: blur(1px);
     opacity: 0.8;
 }
@@ -54,14 +53,13 @@ body::before {
 body::after {
     content: '';
     position: absolute;
-    left: 70%;
-    top: 60%;
-    transform: translate(-70%, -60%);
     z-index: -1;
     border-radius: 50%;
     background: linear-gradient(rgb(222, 0, 230), rgb(0, 255, 13));
-    width: 30vh;
-    height: 30vh;
+    margin-top: -20vh;
+    margin-left: 30vw;
+    width: 15vw;
+    height: 15vw;
     filter: blur(1px);
     opacity: 0.8;
 }
@@ -72,7 +70,7 @@ body::after {
 }
 
 .card .front {
-    background: rgba(128, 128, 128, 0.178);
+    background: rgba(78, 75, 75, 0.178);
     backdrop-filter: blur(5px);
     box-shadow: 0.2vw 0.2vh 0.5vh rgba(0, 0, 0, 0.342);
     border-radius: 2vw;
@@ -170,4 +168,18 @@ body::after {
     .card .front .year {
         font-size: 6vw;
     }
+
+    body::before {
+        width: 20vh;
+        height: 20vh;
+        margin-bottom: -20vw;
+        margin-left: -30vh;
+    }
+
+    body::after {
+        width: 15vh;
+        height: 15vh;
+        margin-top: -20vw;
+        margin-left: 30vh;
+    } 
 }
