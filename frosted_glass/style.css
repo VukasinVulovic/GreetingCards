@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(./assets/fonts/Poppins-Thin.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url(./assets/fonts/Segoe\ UI.ttf);
+}
+
+:root {
+    width: 100%;
+    height: 100%;
+    --first-bg: linear-gradient(to right, #1abe61, #08997c);
+    --second-bg: linear-gradient(to right, #f1c40f, #d35400);
+    --third-bg: linear-gradient(to right, #e7eaec, #d1d3d3);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: rgb(255,0,31);
+    background: linear-gradient(153deg, rgba(255,0,31,1) 0%, rgba(253,29,29,1) 25%, rgba(0,22,250,1) 100%);
+    font-family: 'Segoe UI';
+    /* backdrop-filter: blur(50px); */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    left: 30%;
+    top: 40%;
+    transform: translate(-30%, -40%);
+    border-radius: 50%;
+    background: linear-gradient(green, yellow);
+    width: 30vh;
+    height: 30vh;
+    filter: blur(1px);
+    opacity: 0.8;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    left: 70%;
+    top: 60%;
+    transform: translate(-70%, -60%);
+    z-index: -1;
+    border-radius: 50%;
+    background: linear-gradient(rgb(222, 0, 230), rgb(0, 255, 13));
+    width: 30vh;
+    height: 30vh;
+    filter: blur(1px);
+    opacity: 0.8;
+}
+
+.card {
+    position: relative;
+    max-width: 100%;
+}
+
+.card .front {
+    background: rgba(128, 128, 128, 0.178);
+    backdrop-filter: blur(5px);
+    box-shadow: 0.2vw 0.2vh 0.5vh rgba(0, 0, 0, 0.342);
+    border-radius: 2vw;
+    border: 1px solid rgba(245, 222, 179, 0.123);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+    /* -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; */
+    flex-wrap: wrap;
+    /* transition: 0.5s; */
+}
+
+.card .front .title {
+    background: none;
+    width: 80%;
+    height: 70%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 7vw;
+    padding: 1vw 2vw;
+    /* border: 1px solid rgba(0, 0, 0, 0.322); */
+    color: rgba(255, 255, 255, 0.801);
+    border-radius: 3px;
+    z-index: 2;
+    flex-basis: 100%;
+    margin: 5% 25% 15% 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card .front .year {
+    text-align: center;
+    font-family: 'Segoe UI';
+    color: rgba(255, 255, 255, 0.801);
+    z-index: 2;
+    font-weight: 900;
+    font-size: 3vw;
+    margin-top: -5%;
+    margin-bottom: 10%;
+}
+
+.card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: rotateY(180deg);
+    /* transition: 1s; */
+    color: rgba(255, 255, 255, 0.801);
+    font-family: 'Poppins-Regular';
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.5em;
+    border-radius: 4px;
+    /* backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; */
+    background: rgba(128, 128, 128, 0.178);
+    backdrop-filter: blur(5px);
+    box-shadow: 0.2vw 0.2vh 0.5vh rgba(0, 0, 0, 0.342);
+    border-radius: 2vw;
+    border: 1px solid rgba(245, 222, 179, 0.123);
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    box-shadow: 0.2vw 0.2vh 0.5vh rgba(0, 0, 0, 0.342);
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .card .front .title {
+        font-size: 17vw;
+        padding: 2vw 5vw;
+        padding-right: 6vw;
+        /* margin-left: -1vw; */
+    }
+    
+    .card .front .year {
+        font-size: 6vw;
+    }
+}
