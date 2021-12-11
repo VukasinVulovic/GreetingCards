@@ -37,29 +37,28 @@ body {
 
 .card {
     position: relative;
-    max-width: 100%;
 }
 
-.card .front {
-    width: 100%;
-    height: 100%;
+.card .front, .card .back {
     background: var(--first-bg);
     border-radius: 4px;
+    height: 85vh;
+    width: 32vw;
     text-align: center;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    padding: 1em;
     overflow: hidden;
+    border-radius: 2px;
     text-align: left;
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-    box-shadow: 0.2vw 0.2vh 0.5vh rgba(0, 0, 0, 0.342);
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.342);
     overflow: hidden;
     position: relative;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    flex-wrap: wrap;
-    transition: 1s;
 }
 
 .card .front::before {
@@ -86,69 +85,76 @@ body {
 }
 
 .card .front .title {
-    width: 80%;
-    height: 70%;
     text-align: center;
     font-family: 'Poppins';
     font-weight: 900;
     font-size: 7vw;
-    padding: 1vw 2vw;
-    border: 1px solid rgba(0, 0, 0, 0.322);
-    border-radius: 3px;
+    margin-top: 3vh;
+    border: 1px solid rgba(0, 0, 0, 0.479);
     backdrop-filter: hue-rotate(180deg);
+    /* backdrop-filter: blur(2px) hue-rotate(180deg); */
+    
+    padding: 1rem;
+    padding-left: 0.6rem;
+    border-radius: 3px;
     z-index: 2;
-    flex-basis: 100%;
-
-    margin: 5% 25% 15% 25%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
 }
 
 .card .front .year {
     text-align: center;
     font-family: 'Rajdhani';
-    z-index: 2;
+    z-index: 1;
     font-weight: 900;
-    font-size: 3vw;
-    margin-top: -5%;
-    margin-bottom: 10%;
+    font-size: 2.5vw;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.486);
+    position: absolute;
+    bottom: 0;
 }
 
 .card .back {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 1;
     transform: rotateY(180deg);
-    transition: 1s;
     color: rgb(0, 0, 0);
     font-family: 'Poppins-Regular';
     text-align: center;
     font-weight: 900;
-    font-size: 1.5em;
-    border-radius: 4px;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    background: rgb(161, 161, 161);
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    box-shadow: 0.2vw 0.2vh 0.5vh rgba(0, 0, 0, 0.342);
+    font-size: 2vw;
 }
 
-@media only screen and (max-width: 600px) {
-    .card .front .title {
-        font-size: 17vw;
-        padding: 2vw 5vw;
-        padding-right: 6vw;
-        /* margin-left: -1vw; */
-    }
+.card .front .title {
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 7vw;
+    margin-top: 3vh;
+    border: 1px solid rgba(0, 0, 0, 0.479);
+    backdrop-filter: hue-rotate(180deg);
+    /* backdrop-filter: blur(2px) hue-rotate(180deg); */
     
-    .card .front .year {
-        font-size: 6vw;
+    padding: 1rem;
+    padding-left: 0.6rem;
+    border-radius: 3px;
+    z-index: 2;
+}
+
+.card .back img {
+    width: 20vw;
+    height: 18vh;
+    display: block;
+    margin: auto;
+}
+
+@media only screen and (min-width: 1000px) {
+    .card .front, .card .back {
+        flex-direction: row-reverse;
+    }
+}
+
+@media only screen and (max-height: 640px) {
+    .card .front, .card .back {
+        flex-direction: row-reverse;
     }
 }
