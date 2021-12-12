@@ -125,7 +125,6 @@ body {
     z-index: -1;
     transform: rotateY(180deg);
     transition: 1s;
-    color: rgb(0, 0, 0);
     font-family: 'Poppins-Regular';
     text-align: center;
     font-weight: 900;

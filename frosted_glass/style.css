@@ -67,6 +67,7 @@ body::after {
 .card {
     position: relative;
     max-width: 100%;
+
 }
 
 .card .front {

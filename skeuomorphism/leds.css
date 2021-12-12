@@ -1,0 +1,102 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+.leds {
+    top: 0;
+    left: 0;
+    position: absolute;
+    /* width: 40vw;
+    height: 40vh; */
+    /* background-color: rgb(189, 189, 188); */
+    /* padding: 1vw; */
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes a {
+    from {
+        filter: brightness(0.6);
+    }
+
+    to {
+        filter: brightness(1);
+    }
+}
+
+.leds .led {
+    /* animation: a forwards 1s alternate infinite; */
+    display: flex;
+    width: 1.2vw;
+    height: 2vw;
+    /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.589); */
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    position: relative;
+    /* margin: 1em; */
+    margin: 1vw;
+    opacity: 0.9;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    backdrop-filter: blur(4px);
+}
+
+.leds .led::before {
+    content: '';
+    background: rgba(58, 58, 58, 0.76);
+    position: absolute;
+    width: 0.1vw;
+    height: 1.2vw;
+    left: 25%;
+    bottom: -15%;
+    z-index: -1;
+}
+
+.leds .led::after {
+    content: '';
+    background: rgba(58, 58, 58, 0.76);
+    position: absolute;
+    width: 0.1vw;
+    height: 1.2vw;
+    right: 20%;
+    bottom: -15%;
+    z-index: -1;
+}
+
+.led-red {
+    background: rgb(210,0,1);
+    background: linear-gradient(0deg, rgba(210,0,1,1) 21%, rgb(211, 7, 38) 48%, rgb(235, 15, 22) 78%);
+    box-shadow: 0 0 1vw rgb(210,0,1);
+}
+
+.led-green {
+    background: rgb(76,165,36);
+    background: linear-gradient(0deg, rgb(70, 165, 26) 21%, rgb(133, 189, 31) 48%, rgb(94, 180, 40) 78%);
+    box-shadow: 0 0 1vw rgb(76,165,36);
+}
+
+.led-blue {
+    background: rgb(0,61,152);
+    background: linear-gradient(0deg, rgb(14, 77, 173) 21%, rgb(43, 123, 236) 48%, rgb(57, 130, 231) 78%);
+    box-shadow: 0 0 1vw rgb(0,61,152);
+}
+
+.led-orange {
+    background: rgb(242,112,32);
+    background: linear-gradient(0deg, rgb(228, 100, 20) 21%, rgb(230, 138, 73) 49%, rgb(243, 119, 18)78%);
+    box-shadow: 0 0 1vw rgb(242,112,32);
+}
+
+.led-off {
+    filter: brightness(0.6);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.589); 
+}
