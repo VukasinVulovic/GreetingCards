@@ -28,7 +28,6 @@ let i = 0;
 
 window.onload = () => {
     back.hidden = false;
-    title.innerHTML = lang[i++]['title'];
     
     card.addEventListener('click', async() => {
         front.style.transform = `rotateY(${!prev ? 180 : 0}deg)`;
