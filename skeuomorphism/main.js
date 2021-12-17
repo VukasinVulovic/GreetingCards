@@ -1,5 +1,7 @@
 const card = document.querySelector('.card');
 const front = card.querySelector('.card .front');
+const back_text = card.querySelector('.card .back .text');
+
 let prev = false;
 
 const map = (val, imin, imax, omin, omax) => (val - imin) * (omax - omin) / (imax - imin) + omin;
@@ -19,6 +21,15 @@ async function animate(from, to, step, delay, cb) {
 }
 
 const delay = t => new Promise(resolve => setTimeout(resolve, t)); 
+
+const messsages = [
+    'We wish you <br>good health <br>and<br>a lot of happiness.',
+    'Let all <br>your wishes<br> become real.',
+    'To radiate<br> a smile <br>and<br> remove sadness.',
+    'In the new year,<br> we wish you only <br>good thoughts <br>and<br> successful battles.',
+    'We wish you <br>lots of love <br>and<br>beautiful feelings.',
+    'Let love follow you <br>and<br> happiness shower you.'
+];
 
 let busy = false;
 const leds = [];
@@ -65,10 +76,10 @@ window.onload = () => {
         alert('If you are on a mobile device, please rotate it horizontally for optimal viewing.')
     }
 
-    let colors = ['red', 'green', 'blue', 'orange'];
+    let colors = ['red', 'green', 'blue', 'orange', 'purple'];
 
-    for(let i = 0; i < 5; i++) {
-        const led = new Led(colors[i%4]);
+    for(let i = 0; i < colors.length; i++) {
+        const led = new Led(colors[i%colors.length]);
         led.attachTo(document.querySelector('.leds'));
         leds.push(led);
     }
@@ -90,6 +101,9 @@ window.onload = () => {
     card.addEventListener('click', async() => {
         if(busy)
             return;
+
+        if(!prev)
+            back_text.innerHTML = messsages[Math.floor(Math.random() * messsages.length)] + ' <small>Jingle Bells by Kevin MacLeod http://incompetech.com</small>';
         
         busy = true;
 
