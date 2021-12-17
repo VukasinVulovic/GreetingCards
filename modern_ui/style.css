@@ -150,4 +150,8 @@ body {
     .card .front .year {
         font-size: 6vw;
     }
+
+    .card .back {
+        font-size: 2em;
+    }
 }

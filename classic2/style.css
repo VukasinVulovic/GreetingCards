@@ -77,4 +77,9 @@ body {
         width: 75vw;
         height: 100vw;
     }
+
+    .card .back {
+        font-size: 4vh;
+        padding: 1vh;
+    }
 }

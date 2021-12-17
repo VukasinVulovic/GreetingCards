@@ -170,6 +170,10 @@ body::after {
         font-size: 6vw;
     }
 
+    .card .back {
+        font-size: 2em;
+    }
+
     body::before {
         width: 20vh;
         height: 20vh;
